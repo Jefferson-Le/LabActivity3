@@ -22,10 +22,19 @@ class MainActivity : AppCompatActivity() {
         nameEdit = findViewById(R.id.nameEditText)
         button = findViewById(R.id.clickMeButton)
 
-        
-        findViewById<Button>(R.id.clickMeButton).setOnClickListener {
 
-            displayTextView.text = "Hello, ${findViewById<EditText>(R.id.nameEditText).text}"
+        button.setOnClickListener {
+            var name = nameEdit.text.toString()
+            if (name.isEmpty()) {
+                nameEdit.setError("Name has not been entered")
+                var displayText = displayTextView.text.toString()
+
+            }
+            else {
+                displayTextView.text = "Hello, ${findViewById<EditText>(R.id.nameEditText).text}"
+            }
+
+
         }
 
 
