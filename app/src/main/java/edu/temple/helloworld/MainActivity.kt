@@ -23,17 +23,9 @@ class MainActivity : AppCompatActivity() {
         button = findViewById(R.id.clickMeButton)
 
         
-        button.setOnClickListener {
-            var name = nameEdit.text.toString()
-            if (name.isEmpty()) {
-                var displayText = displayTextView.text.toString()
+        findViewById<Button>(R.id.clickMeButton).setOnClickListener {
 
-            }
-            else {
-                displayTextView.text = "Hello, ${findViewById<EditText>(R.id.nameEditText).text}"
-            }
-
-
+            displayTextView.text = "Hello, ${findViewById<EditText>(R.id.nameEditText).text}"
         }
 
 
